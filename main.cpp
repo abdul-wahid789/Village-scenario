@@ -27,8 +27,7 @@ static void resize(int width, int height)
 }
 
 
-void circle(float radius,float x=0,float y=0)
-{
+void circle(float radius,float x=0,float y=0){
 
     glPushMatrix();
     glTranslated(x,y,0);
@@ -36,6 +35,58 @@ void circle(float radius,float x=0,float y=0)
     glutSolidSphere(radius,100,100);
     glPopMatrix();
 
+}
+void ground(){
+    //ground
+    glPushMatrix();
+    glColor3ub(190,222,169);
+    glBegin(GL_POLYGON);
+    glVertex2d(-250,165);
+    glVertex2d(250,165);
+    glVertex2d(250,-165);
+    glVertex2d(-250,-165);
+    glEnd();
+    glPopMatrix();
+
+}
+void sky(){
+    //sky
+    glPushMatrix();
+    glColor3ub(9,176,218);
+    glBegin(GL_POLYGON);
+    glVertex2d(-250,165);
+    glVertex2d(250,165);
+    glVertex2f(250,90.04171);
+    glVertex2f(-250,80.9076);
+    glEnd();
+    glPopMatrix();
+
+}
+void river(){
+    //river
+    glPushMatrix();
+    glColor3ub(40,196,244);
+    glBegin(GL_POLYGON);
+    glVertex2f(-250,-107.256);
+    glVertex2f(-90,-90);
+    glVertex2f(-89.20139,-165);
+    glVertex2f(-250,-165);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-90,-95.63584);
+    glVertex2f(1.00305,-67.53294);
+    glVertex2f(3.48574,-165);;
+    glVertex2f(-89.94126,-165);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2f(1.00305,-73.49413);
+    glVertex2f(250,-25.46563);
+    glVertex2f(250,-165);
+    glVertex2f(2.36956,-165);
+    glEnd();
+    glPopMatrix();
 }
 void tree1()
 {
@@ -201,7 +252,8 @@ void tree2()
     glPopMatrix();
 
 }
-void fencebarVertical(){
+void fencebarVertical()
+{
     glPushMatrix();
     glBegin(GL_POLYGON);
     glVertex2f(-82.01707, 14.39685);
@@ -213,7 +265,8 @@ void fencebarVertical(){
     glPopMatrix();
 
 }
-void fence(){
+void fence()
+{
     //horizontal bar
     glPushMatrix();
     glBegin(GL_POLYGON);
@@ -263,11 +316,143 @@ void fence(){
 
     glPushMatrix();
 
+}
+void tree3()
+{
+    glPushMatrix();
+
+    //branch
+    glColor3ub(144,44,29);
+    glBegin(GL_POLYGON);
+    glVertex2f(-29.31571, 20.45788);
+    glVertex2f(-26, 24);
+    glVertex2f(-15.41996, 12.53323);
+    glVertex2f(-19.33387, 9.08765);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-16.99222, 24.07424);
+    glVertex2f(-12, 24);
+    glVertex2f(-12, 10);
+    glVertex2f(-16.92531, 10.29193);
+    glEnd();
+
+      glBegin(GL_POLYGON);
+    glVertex2f(-5.15014, 23.33829);
+    glVertex2f(-1.83837, 19.29058);
+    glVertex2f(-12, 10);
+    glVertex2f(-15.35306, 14.00513);
+    glEnd();
+
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-19.06511, 14.16724);
+    glVertex2f(-9.38244, 14.20862);
+    glVertex2f(-9.09278, -7.51534);
+    glVertex2f(-19.14787, -7.51534);
+    glEnd();
 
 
 
 
+    glColor3ub(8,147,71);
 
+    circle(6.7156,-44.3451, 28.92786);
+    circle(7.5967,-37.91872,38.56743);
+    circle(7.3477,-25.37198, 44.68779);
+    circle(11.119352,-7.62293, 46.67691);
+    circle(7.3477,-25.37198, 44.68779);
+    circle(6.9123,9.20807, 45.29983);
+    circle(7.8377,19.45967, 36.4253);
+    circle(8.4386,15, 25);
+    circle(6.0299,2.32266, 20.97138);
+    circle(6.7134,-4.08019, 27.10993);
+    circle(7.0731,-16.65046, 28.62184);
+    circle(8.6579,-31.64535, 23.57254);
+
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-38.79354, 43.65602);
+    glVertex2f(16.4487, 42.9339);
+    glVertex2f(18.97613, 24.70034);
+    glVertex2f(-38.16169, 24.97114);
+    glEnd();
+
+
+    glPopMatrix();
+
+}
+void tree4(){
+    glPushMatrix();
+    glTranslated(81.6,8.61,0);
+    tree3();
+    glPopMatrix();
+
+}
+void schoolHouse(){
+
+    glPushMatrix();
+    //roof
+    glColor3ub(220,202,36);
+    glBegin(GL_POLYGON);
+    glVertex2f(112.28795, 59.10958);
+    glVertex2f(228.89393, 62.98688);
+    glVertex2f(246.54415, 42.78185);
+    glVertex2f(177.81608, 39.18273);
+    glVertex2f(141.99504, 30.67779);
+    glEnd();
+
+    //left side
+    glColor3ub(169,124,80);
+    glBegin(GL_POLYGON);
+    glVertex2f(112.28795, 59.10958);
+    glVertex2f(140.98431, 32.44937);
+    glVertex2f(140, 15);
+    glVertex2f(91.84271, 28.62297);
+    glVertex2f(94.25692, 48.0052);
+    glEnd();
+
+    //left element door
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+    glVertex2f(124.3546, 34.36565);
+    glVertex2f(133.98297, 32.51912);
+    glVertex2f(131.071, 17.77138);
+    glVertex2f(122.05327, 20.11974);
+    glEnd();
+
+    //left element top window
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+    glVertex2f(108.5931, 52.03964);
+    glVertex2f(117.82578, 51.90775);
+    glVertex2f(116.83657, 47.95088);
+    glVertex2f(108.79095, 47.95088);
+    glEnd();
+
+    //left element middle window
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+    glVertex2f(113.34134, 36.21219);
+    glVertex2f(120.39774, 35.75056);
+    glVertex2f(119.80421, 29.15578);
+    glVertex2f(113.07755, 30.47474);
+    glEnd();
+
+    //front side
+    glColor3ub(117,76,41);
+    glBegin(GL_POLYGON);
+    glVertex2f(140.98431, 32.44937);
+    glVertex2f(177.81608, 39.18273);
+    glVertex2f(244.91758, 42.59322);
+    glVertex2f(247.61156, 28.15767);
+    glVertex2f(178.99056, 21.80752);
+    glVertex2f(140, 15);
+    glEnd();
+
+
+
+    glPopMatrix();
 }
 static void display(void)
 {
@@ -275,62 +460,19 @@ static void display(void)
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    //ground
-    glPushMatrix();
-    glColor3ub(190,222,169);
-    glBegin(GL_POLYGON);
-    glVertex2d(-250,165);
-    glVertex2d(250,165);
-    glVertex2d(250,-165);
-    glVertex2d(-250,-165);
-    glEnd();
-    glPopMatrix();
 
-    //sky
-    glPushMatrix();
-    glColor3ub(9,176,218);
-    glBegin(GL_POLYGON);
-    glVertex2d(-250,165);
-    glVertex2d(250,165);
-    glVertex2f(250,90.04171);
-    glVertex2f(-250,80.9076);
-    glEnd();
-    glPopMatrix();
-
-
-
-
-    //river
-    glPushMatrix();
-    glColor3ub(40,196,244);
-    glBegin(GL_POLYGON);
-    glVertex2f(-250,-107.256);
-    glVertex2f(-90,-90);
-    glVertex2f(-89.20139,-165);
-    glVertex2f(-250,-165);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glVertex2f(-90,-95.63584);
-    glVertex2f(1.00305,-67.53294);
-    glVertex2f(3.48574,-165);;
-    glVertex2f(-89.94126,-165);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glVertex2f(1.00305,-73.49413);
-    glVertex2f(250,-25.46563);
-    glVertex2f(250,-165);
-    glVertex2f(2.36956,-165);
-    glEnd();
-    glPopMatrix();
-
-
+    ground();
+    sky();
+    river();
     house1();
     tree1();
     tree2();
     fence();
     house2();
+    tree3();
+    tree4();
+    schoolHouse();
+
 
 
 
@@ -344,7 +486,7 @@ static void display(void)
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
-    glutInitWindowSize(800,596.013);
+    glutInitWindowSize(1212.08,800);
     glutInitWindowPosition(10,10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
