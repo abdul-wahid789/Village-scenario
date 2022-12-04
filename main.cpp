@@ -382,9 +382,19 @@ void tree3()
     glPopMatrix();
 
 }
+void schoolFontSideDoor(){
+
+    glBegin(GL_POLYGON);
+    glVertex2f(143.25596, 25.86177);
+    glVertex2f(150.3513, 25.86177);
+    glVertex2f(150.17249, 16.72649);
+    glVertex2f(143.14861, 16.60877);
+    glEnd();
+
+}
 void tree4(){
     glPushMatrix();
-    glTranslated(81.6,8.61,0);
+    glTranslated(81.6,20,0);
     tree3();
     glPopMatrix();
 
@@ -450,8 +460,87 @@ void schoolHouse(){
     glVertex2f(140, 15);
     glEnd();
 
+    //font side door
+    glColor3ub(0,0,0);
+    schoolFontSideDoor();
+    glTranslated(10.93,2,0);
+    schoolFontSideDoor();
+    glTranslated(10.93,1.8,0);
+    schoolFontSideDoor();
+
+    glTranslated(15.62,1.8,0);
+    schoolFontSideDoor();
+
+    glTranslated(10.93,1.5,0);
+    schoolFontSideDoor();
+
+    glTranslated(10.93,1,0);
+    schoolFontSideDoor();
+
+    glTranslated(10.93,1,0);
+    schoolFontSideDoor();
+
+    glTranslated(10.93,1,0);
+    schoolFontSideDoor();
+
+    glPopMatrix();
+}
+void road(){
+    glPushMatrix();
+    glBegin(GL_POLYGON);
+    glColor3ub(234,179,129);
+    glVertex2f(-167.59072, -32.97679);
+    glVertex2f(-94.31851, -14.54543);
+    glVertex2f(10.95193, -26.04625);
+    glVertex2f(178.99056, 21.80752);
+    glVertex2f(250, 28.25383);
+    glVertex2f(250, -12.45016);
+    glVertex2f(-88.87935, -58.66275);
+    glEnd();
+    glPopMatrix();
+}
+void flag(){
+    glPushMatrix();
+
+    //flag
+    glColor3ub(15,138,67);
+    glBegin(GL_POLYGON);
+    glVertex2f(188, 74);
+    glVertex2f(211.71266, 78.62816);
+    glVertex2f(213.45379, 68.28089);
+    glVertex2f(189.47599, 64.00269);
+    glEnd();
+
+    glColor3ub(237,32,36);
+    circle(3.2848,200.76844, 71.46467);
+
+    glColor3ub(113,31,18);
+    glBegin(GL_POLYGON);
+    glVertex2f(187.93202, 77.28527);
+    glVertex2f(188.94463, 77.46273);
+    glVertex2f(197.78789, 10.89352);
+    glVertex2f(196.48821, 10.78522);
+    glEnd();
 
 
+
+    glPopMatrix();
+}
+void cloud(){
+    glPushMatrix();
+    glColor3ub(255,255,255);
+    circle(12.0490,-189.4534, 143.04518);
+    circle(11.1494,-170, 150);
+    circle(12.2979,-150.51966, 154.11639);
+    circle(10.5966,-160.85279, 136.95602);
+    circle(10.8489,-177.82863, 133.45014);
+
+    glTranslated(313.24,-12,0);
+    circle(12.0490,-189.4534, 143.04518);
+    circle(11.1494,-170, 150);
+    circle(12.2979,-150.51966, 154.11639);
+    circle(10.5966,-160.85279, 136.95602);
+    circle(10.8489,-177.82863, 133.45014);
     glPopMatrix();
 }
 static void display(void)
@@ -462,7 +551,9 @@ static void display(void)
 
 
     ground();
+    road();
     sky();
+    cloud();
     river();
     house1();
     tree1();
@@ -472,6 +563,7 @@ static void display(void)
     tree3();
     tree4();
     schoolHouse();
+    flag();
 
 
 
