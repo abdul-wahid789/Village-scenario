@@ -8,13 +8,7 @@
 #include<iostream>
 
 using namespace std;
-void rectengle(float a,float b, float c, float d)
-{
 
-
-
-
-}
 static void resize(int width, int height)
 {
     const float ar = (float) width / (float) height;
@@ -32,7 +26,7 @@ static void resize(int width, int height)
 void circle(float radius,float x=0,float y=0)
 {
 
-    glPushMatrix();
+  glPushMatrix();
     glTranslated(x,y,0);
     glScaled(1,1,0);
     glutSolidSphere(radius,100,100);
@@ -42,7 +36,7 @@ void circle(float radius,float x=0,float y=0)
 void ground()
 {
     //ground
-    glPushMatrix();
+  glPushMatrix();
     glColor3ub(190,222,169);
     glBegin(GL_POLYGON);
     glVertex2d(-250,165);
@@ -97,13 +91,14 @@ void river()
 void tree1()
 {
     //tree
-    glColor3ub(15,149,71);
+glColor3ub(15,149,71);
     glPushMatrix();
     circle(6.128,-176.40072, 20.40875);
     circle(7.4899,-174.90286, 32.84733);
     circle(9.09,-160.97746,38.84979);
     circle(6.53,-146,38);
     circle(8.99,-142.89776,24.21895);
+
     glBegin(GL_POLYGON);
     glVertex2f(-174.90286,32.84733);
     glVertex2f(-146.11722,36.34942);
@@ -142,7 +137,7 @@ void tree1()
 void house1()
 {
     // house roof side
-    glPushMatrix();
+glPushMatrix();
     glColor3ub(176,157,50);
     glBegin(GL_TRIANGLES);
     glVertex2f(-217.9067, 13.9166);
@@ -251,7 +246,7 @@ void house2()
 
 void tree2()
 {
-    glPushMatrix();
+ glPushMatrix();
     glScaled(0.8,0.8,0);
     glTranslated(19.3,10,0);
     tree1();
@@ -821,7 +816,7 @@ void boat2()
 }
 float boat1x=0;
 float boat2x=-400;
-int state=1;
+
 
 void windmill()
 {
@@ -1026,13 +1021,13 @@ void timer(int)
         cloud1x+=0.2;
     else
     {
-        cloud1x=-50;
+        cloud1x=-60;
     }
     if(cloud2x>-450)
         cloud2x-=0.2;
     else
     {
-        cloud2x=-50;
+        cloud2x=100;
     }
 
 
