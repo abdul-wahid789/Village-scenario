@@ -537,9 +537,9 @@ void flag()
 
     glPopMatrix();
 }
-void cloud()
+void cloud1()
 {
-    glPushMatrix();
+
     glColor3ub(255,255,255);
     circle(12.0490,-189.4534, 143.04518);
     circle(11.1494,-170, 150);
@@ -547,12 +547,33 @@ void cloud()
     circle(10.5966,-160.85279, 136.95602);
     circle(10.8489,-177.82863, 133.45014);
 
+}
+void cloud2()
+{
     glTranslated(313.24,-12,0);
     circle(12.0490,-189.4534, 143.04518);
     circle(11.1494,-170, 150);
     circle(12.2979,-150.51966, 154.11639);
     circle(10.5966,-160.85279, 136.95602);
     circle(10.8489,-177.82863, 133.45014);
+
+}
+float cloud1x=-50;
+float cloud2x=100;
+void cloud()
+{
+    glPushMatrix();
+
+    glPushMatrix();
+    glTranslated(cloud1x,0,0);
+    cloud1();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslated(cloud2x,0,0);
+    cloud2();
+    glPopMatrix();
+
     glPopMatrix();
 }
 void mountain1()
@@ -592,20 +613,7 @@ void mountain()
     glVertex2f(-2.08582, 50.72664);
     glEnd();
 
-    //mountain 3
-    glColor3ub(83,48,18);
-    glBegin(GL_POLYGON);
-    glVertex2f(5.72219, 129.78767);
-    glVertex2f(-6.12302, 68.12285);
-    glVertex2f(-36.29929, 78.64793);
-    glEnd();
 
-    glColor3ub(200,92,40);
-    glBegin(GL_POLYGON);
-    glVertex2f(5.72219, 129.78767);
-    glVertex2f(-6.12302, 68.12285);
-    glVertex2f(66.69022, 74.74224);
-    glEnd();
 
     //mountain 4
     glColor3ub(83,48,18);
@@ -622,21 +630,22 @@ void mountain()
     glVertex2f(152.88858, 83.49892);
     glEnd();
 
-
-    //mountain 5
+    //mountain 3
     glColor3ub(83,48,18);
     glBegin(GL_POLYGON);
-    glVertex2f(142.23199, 108.67052);
-    glVertex2f(136.71996, 81.66158);
-    glVertex2f(123.4911, 86.43867);
+    glVertex2f(5.72219, 129.78767);
+    glVertex2f(-6.12302, 68.12285);
+    glVertex2f(-36.29929, 78.64793);
     glEnd();
 
     glColor3ub(200,92,40);
     glBegin(GL_POLYGON);
-    glVertex2f(142.23199, 108.67052);
-    glVertex2f(136.71996, 81.66158);
-    glVertex2f(170.89454, 84.78506);
+    glVertex2f(5.72219, 129.78767);
+    glVertex2f(-6.12302, 68.12285);
+    glVertex2f(66.69022, 74.74224);
     glEnd();
+
+
 
 
     //mountain 6
@@ -652,6 +661,21 @@ void mountain()
     glVertex2f(193.08436, 132.09917);
     glVertex2f(183.43427, 81.70426);
     glVertex2f(247.76819, 87.06542);
+    glEnd();
+
+    //mountain 5
+    glColor3ub(83,48,18);
+    glBegin(GL_POLYGON);
+    glVertex2f(142.23199, 108.67052);
+    glVertex2f(136.71996, 81.66158);
+    glVertex2f(123.4911, 86.43867);
+    glEnd();
+
+    glColor3ub(200,92,40);
+    glBegin(GL_POLYGON);
+    glVertex2f(142.23199, 108.67052);
+    glVertex2f(136.71996, 81.66158);
+    glVertex2f(170.89454, 84.78506);
     glEnd();
 
     glPopMatrix();
@@ -796,8 +820,145 @@ void boat2()
 
 }
 float boat1x=0;
-float boat2x=0;
+float boat2x=-400;
 int state=1;
+
+void windmill()
+{
+    glPushMatrix();
+
+    glColor3ub(188,81,158);
+    glBegin(GL_POLYGON);
+    glVertex2f(-217.66795, 33.22182);
+    glVertex2f(-195.69932, 0.47504);
+    glVertex2f(-193.19247, 1.72624);
+    glEnd();
+
+    glColor3ub(188,81,158);
+    glBegin(GL_POLYGON);
+    glVertex2f(-229.64297, -25.36184);
+    glVertex2f(-196.09567, -2.8375);
+    glVertex2f(-195.49547, -5.57798);
+    glEnd();
+
+    glColor3ub(188,81,158);
+    glBegin(GL_POLYGON);
+    glVertex2f(-151.80622, 5.79608);
+    glVertex2f(-190.28041, 0.71783);
+    glVertex2f(-188.44916, -1.78381);
+    glEnd();
+
+    //stand
+    glColor3ub(169,124,80);
+    glBegin(GL_POLYGON);
+    glVertex2f(-193.36146, -6.00998);
+    glVertex2f(-192, -6);
+    glVertex2f(-196.48792, -88.74288);
+    glVertex2f(-201.19566, -88.70179);
+    glEnd();
+
+    glColor3ub(92,92,92);
+    circle(4.8445,-192.5249, -2.36688);
+
+    glPopMatrix();
+
+}
+void tree5()
+{
+    glPushMatrix();
+    glTranslated(70,30,0);
+    tree2();
+    glPopMatrix();
+
+}
+void tree6()
+{
+    glPushMatrix();
+    glColor3ub(96,187,70);
+    glBegin(GL_POLYGON);
+    glVertex2f(-148.9325, 94.89213);
+    glVertex2f(-152.68311, 88.35881);
+    glVertex2f(-143.24609, 87.99585);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-148.9325, 94.89213);
+    glVertex2f(-152.68311, 88.35881);
+    glVertex2f(-143.24609, 87.99585);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-148.20657, 90.4156);
+    glVertex2f(-152.44114, 81.94648);
+    glVertex2f(-141.1893, 81.7045);
+    glEnd();
+
+
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-147.0219, 85.16512);
+    glVertex2f(-153.71821, 72.2508);
+    glVertex2f(-136.59479, 72.44213);
+    glEnd();
+
+    glColor3ub(89,31,12);
+    glBegin(GL_POLYGON);
+    glVertex2f(-147.0219, 71.96382);
+    glVertex2f(-143.48242, 72.05948);
+    glVertex2f(-143.67375, 61.72803);
+    glVertex2f(-147.21322, 61.91935);
+    glEnd();
+
+    glPopMatrix();
+
+}
+void tree7()
+{
+    glPushMatrix();
+
+    //branch
+    glColor3ub(140,43,28);
+    glBegin(GL_POLYGON);
+    glVertex2f(-130.76351, 97.66928);
+    glVertex2f(-128.59438, 99.9719);
+    glVertex2f(-124.08925, 94.86609);
+    glVertex2f(-126.5921, 92.36325);
+    glEnd();
+
+
+
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-119.08356, 107.6473);
+    glVertex2f(-116.44723, 106.27907);
+    glVertex2f(-122.2872, 94.1653);
+    glVertex2f(-124.89016, 95.66701);
+    glEnd();
+
+
+    glBegin(GL_POLYGON);
+    glVertex2f(-124.20231, 89.81016);
+    glVertex2f(-120.67661, 90.20253);
+    glVertex2f(-119.70145, 74.02232);
+    glVertex2f(-123.80751, 73.52346);
+    glEnd();
+
+
+
+    glColor3ub(96,187,70);
+    circle(4.7063,-139.29474, 107.95754);
+    circle(6.0835,-132.79345, 101.84323);
+    circle(7.5139,-115.06969, 112.29174);
+    circle(4.7989,-124.51204, 91.62692);
+    circle(3.7282,-120.41004, 95.88372);
+
+
+
+
+
+    glPopMatrix();
+
+}
 static void display(void)
 {
 
@@ -810,18 +971,24 @@ static void display(void)
 
     sky();
     sun();
-    mountain();
     cloud();
+    tree7();
+    mountain();
+
     river();
     house1();
     tree1();
     tree2();
+    tree5();
+    tree6();
+
     fence();
     house2();
     tree3();
     tree4();
     schoolHouse();
     flag();
+    windmill();
 
     glPushMatrix();
     glTranslated(boat2x,-15,0);
@@ -848,14 +1015,25 @@ void timer(int)
         boat1x=300;
     }
 
-    if(boat2x>-500)
-        boat2x-=1;
+    if(boat2x<150)
+        boat2x+=1;
     else
     {
-        boat2x=300;
+        boat2x=-400;
     }
 
-
+    if(cloud1x<500)
+        cloud1x+=0.2;
+    else
+    {
+        cloud1x=-50;
+    }
+    if(cloud2x>-450)
+        cloud2x-=0.2;
+    else
+    {
+        cloud2x=-50;
+    }
 
 
     glutTimerFunc(1000/60,timer,0);
@@ -877,9 +1055,7 @@ int main(int argc, char *argv[])
     gluOrtho2D(-250,250,-165,165);
     glClearColor(1,1,1,0);
     glutDisplayFunc(display);
-
     glutTimerFunc(1000,timer,0);
-
 
     glutMainLoop();
 
